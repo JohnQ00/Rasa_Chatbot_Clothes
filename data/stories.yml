@@ -1,0 +1,37 @@
+version: "2.0"
+
+stories:
+
+- story: User wants to buy a shirt
+  steps:
+  - intent: greet
+  - action: utter_greet
+  - intent: choose_shirt
+    entities:
+    - clothes: "camisa"
+  - action: utter_shirt_size
+  - intent: choose_size_shirt
+    entities:
+    - shirt_size: __other__
+  - action: utter_shirt_collar
+  - intent: choose_collar_shirt
+    entities:
+    - collar: __other__
+  - action: utter_goodbye_shirt
+
+- story: User wants to buy a trouser
+  steps:
+  - intent: greet
+  - action: utter_greet
+  - intent: choose_trouser
+    entities:
+    - clothes: "calça"
+  - action: utter_trouser_size
+  - intent: choose_size_trouser
+    entities:
+    - trouser_size: __other__
+  - action: utter_trouser_style
+  - intent: choose_style_trouser
+    entities:
+    - style: __other__
+  - action: utter_goodbye_trouser

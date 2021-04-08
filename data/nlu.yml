@@ -1,0 +1,118 @@
+version: "2.0"
+# Reunite all the intents
+nlu:
+- intent: greet
+  examples: |
+    - oi
+    - olá
+    - opa
+    - eai
+    - bom dia
+    - boa noite
+    - bomdia
+    - boanoite
+    - boa tarde
+    - boatarde
+    - ei
+    - tudo bem?
+    - bora
+    - como vai?
+    - bicho
+
+- intent: goodbye
+  examples: |
+    - tenha um bom dia
+    - tenha um bomdia
+    - tenha uma boa tarde
+    - tenha uma boatarde
+    - tenha uma boa noite
+    - tenha uma boanoite
+    - adeus
+    - xau
+    - tchau
+    - até
+    - até mais
+    - vou embora
+
+# - intent: affirm
+#   examples: |
+#     - sim
+#     - s
+#     - quero
+#     - confirmo
+#     - exatamente
+#     - exato
+#     - correto
+#     - concordo
+#     - isso
+#     - isso mesmo
+
+# - intent: deny
+#   examples: |
+#     - não
+#     - n
+#     - mudei de ideia
+#     - não quero
+#     - não quero mais
+#     - nunca
+#     - discord
+#     - incorreto
+
+- intent: choose_shirt
+  examples: |
+    - eu quero uma [camisa](clothes)
+    - [camisa](clothes)
+    - quero uma [camisa](clothes)
+    - quero comprar uma [camisa](clothes)
+    - por favor, uma [camisa](clothes)
+    - por favor, eu quero uma [camisa](clothes)
+
+- intent: choose_trouser
+  examples: |
+    - eu quero uma [calça](clothes)
+    - [calça](clothes)
+    - [calça](clothes) comprida
+    - quero uma [calça](clothes)
+    - quero uma [calça](clothes) comprida
+    - quero comprar uma [calça](clothes)
+    - quero comprar uma [calça](clothes) comprida
+    - por favor, uma [calça](clothes)
+    - por favor, eu quero uma [calça](clothes)
+    - por favor, uma [calça](clothes) comprida
+    - por favor, eu quero uma [calça](clothes) comprida
+
+- intent: choose_size_trouser
+  examples: |
+    - [34](trouser_size)
+    - tamanho [34](trouser_size)
+    - [35](trouser_size)
+    - tamanho [35](trouser_size)
+    - [36](trouser_size)
+    - tamanho [36](trouser_size)
+
+- intent: choose_size_shirt
+  examples: |
+    - [M](shirt_size)
+    - tamanho [M](shirt_size)
+    - [P](shirt_size)
+    - tamanho [P](shirt_size)
+    - [G](shirt_size)
+    - tamanho [G](shirt_size)
+
+- intent: choose_style_trouser
+  examples: |
+    - [Slim](style)
+    - [Slim fit](style)
+    - [Regular](style)
+    - [Regular fit](style)
+    - [Skinny](style)
+    - [Skinny fit](style)
+
+- intent: choose_collar_shirt
+  examples: |
+    - [V](collar)
+    - gola [V](collar)
+    - [Redonda](collar)
+    - gola [Redonda](collar)
+    - [Polo](collar)
+    - gola [Polo](collar)

@@ -1,0 +1,134 @@
+version: "2.0"
+
+intents:
+  - greet
+  - goodbye
+  - choose_shirt:
+      use_entities:
+        - clothes
+  - choose_trouser:
+      use_entities:
+        - clothes
+  - choose_size_shirt:
+      use_entities:
+        - shirt_size
+  - choose_size_trouser:
+      use_entities:
+        - trouser_size
+  - choose_collar_shirt:
+      use_entities:
+        - collar
+  - choose_style_trouser:
+      use_entities:
+        - style
+
+entities:
+  - clothes
+  - collar
+  - shirt_size
+  - trouser_size
+  - style
+
+slots:
+
+    clothes:
+      influence_conversation: false
+      type: categorical
+      values:
+        - camisa
+        - calça
+      
+    collar:
+      influence_conversation: false
+      type: categorical
+      values:
+        - V
+        - Redonda
+        - Polo
+
+    shirt_size:
+      influence_conversation: false
+      type: categorical
+      values:
+        - P
+        - M
+        - G
+    
+    trouser_size:
+      influence_conversation: false
+      type: categorical
+      values:
+        - 34
+        - 35
+        - 36
+    
+    style:
+      influence_conversation: false
+      type: categorical
+      values:
+        - Slim fit
+        - Regular fit
+        - Skinny fit
+
+responses:
+
+  utter_greet:
+    - text: "Olá, eu sou seu assistente de compras, pode me chamar de Tigrão, você pretende comprar uma calça ou uma camisa?\n"
+      buttons:
+        - title: "Camisa"
+          payload: '/choose_shirt{{"clothes":"camisa"}}'
+        - title: "Calça"
+          payload: '/choose_trouser{{"clothes":"calça"}}'
+
+  utter_shirt_size:
+    - text: "Temos três opções de tamanho: P, M e G. Qual você deseja?\n"
+      buttons:
+        - title: "P"
+          payload: '/choose_size_shirt{{"shirt_size":"P"}}'
+        - title: "M"
+          payload: '/choose_size_shirt{{"shirt_size":"M"}}'
+        - title: "G"
+          payload: '/choose_size_shirt{{"shirt_size":"G"}}'  
+
+  utter_shirt_collar:
+    - text: "Temos também três opções de gola, qual você deseja?\n"
+      buttons:
+        - title: "V"
+          payload: '/choose_collar_shirt{{"collar":"V"}}'
+        - title: "Redonda"
+          payload: '/choose_collar_shirt{{"collar":"Redonda"}}'
+        - title: "Polo"
+          payload: '/choose_collar_shirt{{"collar":"Polo"}}' 
+    
+  utter_trouser_size:
+    - text: "Temos três opções de tamanho: 34, 35 e 36. Qual você deseja? \n"
+      buttons:
+        - title: "34"
+          payload: '/choose_size_trouser{{"trouser_size":"34"}}'
+        - title: "35"
+          payload: '/choose_size_trouser{{"trouser_size":"35"}}'
+        - title: "36"
+          payload: '/choose_size_trouser{{"trouser_size":"36"}}' 
+
+  utter_trouser_style:
+    - text: "Temos também três opções de estilo, qual você deseja?\n"
+      buttons:
+        - title: "Slim fit"
+          payload: '/choose_style_trouser{{"style":"Slim fit"}}'
+        - title: "Skinny fit"
+          payload: '/choose_style_trouser{{"style":"Skinny fit"}}'
+        - title: "Regular fit"
+          payload: '/choose_style_trouser{{"style":"Regular fit"}}'
+
+  utter_goodbye_trouser:
+    - text: "Muito obrigado por comprar uma {clothes}, de tamanho {trouser_size} e com estilo {style}. Volte sempre!\n"
+  
+  utter_goodbye_shirt:
+    - text: "Muito obrigado por comprar uma {clothes}, com tamanho {shirt_size} e com gola {collar}. Volte sempre!\n"
+
+  utter_goodbye:
+    - text: "Muito obrigado visitar nossa loja. Volte sempre!\n"
+
+session_config:
+  session_expiration_time: 60
+  carry_over_slots_to_new_session: false
