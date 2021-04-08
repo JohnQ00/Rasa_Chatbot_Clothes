@@ -1,8 +1,6 @@
-# Rasa Chatbot based in a Clothing Store
-
-## Universidade Federal de Alagoas - UFAL
-
-ECOM031 - Inteligência Artificial - 2020.1
+<h3 align="center">Universidade Federal de Alagoas - UFAL </h3>
+<h2 align="center">Rasa Chatbot based in a Clothing Store</h2>
+<h4 align="center">ECOM031 - Inteligência Artificial - 2020.1</h4>
 
 Professores: 
 - Evandro de Barros Costa 
